@@ -4,6 +4,12 @@
   justify-content: space-between;
 }
 
+@media only screen and (max-width: 768px) {
+  .formWrapper{
+    flex-direction: column-reverse;
+  }
+}
+
 .container {
   background-color: #ffffff;
   border-color: var(--variable-collection-mainborder);
@@ -18,6 +24,17 @@
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
 }
 
+@media only screen and (max-width: 768px) {
+  .container{
+    height: 50vw;
+    width: 100%;
+    margin-top: 5vw;
+    border-radius: 20px;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+  }
+}
+
 .title {
   font-size: 20px; /* Adjust the font size as needed */
   background-color: #f2f2f2; /* Background color for the title */
@@ -27,11 +44,19 @@
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  /* margin-left: 6%; */
   height: 100%;
   width: 85%;
   border-radius: 100px;
+}
+
+@media only screen and (max-width: 768px) {
+  .form{
+    width: 100%;
+    height: 40vw;
+    border-radius: 20px;
+    flex-direction: column;
   }
+}
   
 .addName {
   background-color: rgb(240,249,255);
@@ -47,9 +72,25 @@
   border-left: 1px solid rgb(192, 192, 192);
 }
 
+@media only screen and (max-width: 768px) {
+  .addName{
+    width: 100%;
+    height: 20%;
+    font-size: 4vw;
+    border-radius: 20px 20px 0 0;
+  }
+}
+
 .nameInputWrapper {
   width: 50%;
   border-left: 1px solid rgb(192, 192, 192);
+}
+
+@media only screen and (max-width: 768px) {
+  .nameInputWrapper{
+    width: 100%;
+    border-left: unset;
+  }
 }
 
 .nameInput {
@@ -62,10 +103,24 @@
   outline: none;
 }
 
+@media only screen and (max-width: 768px) {
+  .nameInput{
+    height: 10vw;
+    font-size: 4vw;
+  }
+}
+
 .selectInputWrapper {
   width: 40%;
   display: flex;
   flex-direction: row-reverse;
+}
+
+@media only screen and (max-width: 768px) {
+  .selectInputWrapper{
+    width: 100%;
+    flex-direction: column;
+  }
 }
 
 .statusText {
@@ -76,6 +131,14 @@
   justify-content: center;
   align-items: center;
   direction: rtl;
+}
+
+@media only screen and (max-width: 768px) {
+  .statusText{
+    width: 100%;
+    font-size: 4vw;
+    color: rgba(35, 73, 126, 1);
+  }
 }
 
 .selectInput {
@@ -89,12 +152,28 @@
   margin-right: 10%;
 }
 
+@media only screen and (max-width: 768px) {
+  .selectInput{
+    width: 100%;
+    height: 10vw;
+    font-size: 4vw;
+  }
+}
+
 .button-container {
   height: 100%;
   width: 8vw;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .button-container{
+    width: 100%;
+    margin-top: 1vw;
+    height: 5vw;
+  }
 }
 
 .add-btn {
@@ -110,6 +189,14 @@
   width: 7vw;
 }
 
+@media only screen and (max-width: 768px) {
+  .add-btn{
+    width: 94%;
+    font-size: 3.5vw;
+  }
+}
+
+
 .changeSearchButton {
   width: 8%;
   border-radius: 100px;
@@ -120,4 +207,13 @@
   justify-content: center;
   background-color: rgba(35, 73, 126, 1);
   color: rgb(255, 255, 255);
+}
+
+@media only screen and (max-width: 768px) {
+  .changeSearchButton{
+    width: 100%;
+    margin-top: 3vw;
+    font-size: 3.5vw;
+    height: 5vw;
+  }
 }
