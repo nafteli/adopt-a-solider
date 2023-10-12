@@ -13,10 +13,9 @@ export const Form = ({ setSoldierAdded, setSoldierTaken, soldierAdded, setAdd })
   };
   
   const statusObject = {
-    soldierf: "חיילת",
-    soldier: "חייל",
+    soldier: "לזכות",
     backedHome: "חזר הבייתה",
-    missing: "נעדר",
+    missing: "להתפלל",
     forMedicine: 'רפו"ש',
   };
 
@@ -49,7 +48,7 @@ export const Form = ({ setSoldierAdded, setSoldierTaken, soldierAdded, setAdd })
         <div className="addName">הוספת שם</div>
         <div className="nameInputWrapper">
           <input
-            placeholder="שם + שם האם"
+            placeholder="שם פרטי + שם האם"
             className="nameInput"
             type="text"
             onChange={(e) => onInputChange("name", e.target.value)}

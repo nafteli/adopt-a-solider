@@ -8,10 +8,9 @@ export const Table = ({
   setUserSoldiers,
 }) => {
   const statusObject = {
-    soldier: "חייל",
-    soldierf: "חיילת",
-    backedHome: "חזר הבייתה",
-    missing: "נעדר",
+    soldier: "לזכות",
+    backedHome: "חזר הביתה",
+    missing: "להתפלל",
     forMedicine: 'רפו"ש',
   };
 
@@ -30,13 +29,13 @@ export const Table = ({
     let textColorClass;
 
     switch (color) {
-      case 'חייל': case 'חיילת':
+      case 'לזכות':
         textColorClass = '#20b487';
         break;
       case 'רפו"ש':
         textColorClass = '#D2C16B';
         break;
-      case 'נעדר':
+      case 'להתפלל':
         textColorClass = '#DE7070';
         break;
       default:
