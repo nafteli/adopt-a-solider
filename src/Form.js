@@ -2,7 +2,7 @@ import { useState } from "react";
 import { addData } from "./firebase";
 import "./Form.css";
 
-export const Form = ({ setSoldierAdded, setSoldierTaken, soldierAdded }) => {
+export const Form = ({ setSoldierAdded, setSoldierTaken, soldierAdded, setAdd }) => {
   const [input, setInput] = useState({name: "", adopting: "", Updates: "",});
   const [soldier, setSoldier] = useState("soldier");
   const [soldierFund, setSoldierFund] = useState(false)
@@ -10,6 +10,14 @@ export const Form = ({ setSoldierAdded, setSoldierTaken, soldierAdded }) => {
   const onInputChange = (key, input) => {
     setSoldierFund(false)
     setInput((prev) => ({ ...prev, [key]: input }));
+  };
+  
+  const statusObject = {
+    soldierf: "חיילת",
+    soldier: "חייל",
+    backedHome: "חזר הבייתה",
+    missing: "נעדר",
+    forMedicine: 'רפו"ש',
   };
 
 
@@ -29,34 +37,43 @@ export const Form = ({ setSoldierAdded, setSoldierTaken, soldierAdded }) => {
   const onSelectChange = (selected) => {
     setSoldier(selected);
   };
+  
 
   return (
+    <div className="formWrapper">
     <div className="container" >
+       <div className="button-container">
+        <button className="add-btn" disabled={!input.name.length} onClick={onClick}>הוספה</button>
+      </div>
       <div className="form">
-        <div>
-          <div>הוסםת שם</div>
+        <div className="addName">הוספת שם</div>
+        <div className="nameInputWrapper">
           <input
+            placeholder="שם + שם האם"
+            className="nameInput"
             type="text"
             onChange={(e) => onInputChange("name", e.target.value)}
             value={input.name}
           />
           {soldierFund && <div>{input.name} כבר רשום בערכת</div>}
         </div>
-        <div>
-          <div>סטטוס</div>
+        <div className="selectInputWrapper">
+          <div className="statusText">סטטוס:</div>
           <select
+            placeholder="fdfg"
             name="selectedFruit"
+            className="selectInput"
             onChange={(e) => onSelectChange(e.target.value)}
           >
-            <option value="soldier">חייל</option>
-            <option value="missing">נעדר</option>
-            <option value="forMedicine">לרפואה שלמה</option>
+            {Object.entries(statusObject).map(([key, value])=> (
+              <option value={key}>{value}</option>
+            ))}
+            
           </select>
         </div>
       </div>
-      <div className="button-container">
-        <button className="add-btn" disabled={!input.name.length} onClick={onClick}>הוספה</button>
-      </div>
+    </div>
+    <div className="changeSearchButton" onClick={() => setAdd(false)}>חיפוש</div>
     </div>
   );
 };

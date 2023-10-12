@@ -1,43 +1,123 @@
+.formWrapper {
+  width: 55vw;
+  display: flex;
+  justify-content: space-between;
+}
+
 .container {
   background-color: #ffffff;
-  border: 1px solid;
   border-color: var(--variable-collection-mainborder);
+  height: 4vw;
   border-radius: 100px;
-  height: 98px;
   overflow: hidden;
   position: relative;
-  width: 970px;
-  /* display: grid;
-  grid-template-rows: auto 1fr auto;
-  gap: 16px;
-  justify-items: center;
-  align-items: center;
-  text-align: center; */
+  width: 50vw;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid rgb(192, 192, 192);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
 }
 
 .title {
   font-size: 20px; /* Adjust the font size as needed */
   background-color: #f2f2f2; /* Background color for the title */
-  padding: 8px; /* Adjust the padding as needed */
 }
 
 .form {
-    display: flex;
-    flex-direction: row-reverse
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  /* margin-left: 6%; */
+  height: 100%;
+  width: 85%;
+  border-radius: 100px;
+  }
+  
+.addName {
+  background-color: rgb(240,249,255);
+  color: rgba(35, 73, 126, 1);
+  height: 100%;
+  width: 25%;
+  border-radius: 0 100px 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3vw;
+  font-weight: 900;
+  border-left: 1px solid rgb(192, 192, 192);
+}
+
+.nameInputWrapper {
+  width: 50%;
+  border-left: 1px solid rgb(192, 192, 192);
+}
+
+.nameInput {
+  width: 95%;
+  height: 100%;
+  direction: rtl;
+  font-size: 1.1vw;
+  color: rgb(192, 192, 192);
+  border: none;
+  outline: none;
+}
+
+.selectInputWrapper {
+  width: 40%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.statusText {
+  color: rgb(192, 192, 192);
+  display: flex;
+  width: 40%;
+  font-size: 1.1vw;
+  justify-content: center;
+  align-items: center;
+  direction: rtl;
+}
+
+.selectInput {
+  border: none;
+  outline: none;
+  background-color: white;
+  color: rgb(192, 192, 192);
+  direction: rtl;
+  font-size: 1.1vw;
+  width: 45%;
+  margin-right: 10%;
 }
 
 .button-container {
-  height: 78px;
-  width: 138px;
+  height: 100%;
+  width: 8vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.button-container .add-btn {
-  background-color: var(--dblue);
+.add-btn {
+  background-color: rgba(35, 73, 126, 1);
+  color: rgb(255, 255, 255);
+  font-size: 1.2vw;
+  font-weight: 800;
   border-radius: 100px;
   box-shadow: 0px 2px 2px #00000040;
-  height: 78px;
+  height: 90%;
   left: 0;
-  position: fixed;
   top: 0;
-  width: 138px;
+  width: 7vw;
+}
+
+.changeSearchButton {
+  width: 8%;
+  border-radius: 100px;
+  font-size: 1.2vw;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(35, 73, 126, 1);
+  color: rgb(255, 255, 255);
 }

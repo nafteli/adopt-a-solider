@@ -14,6 +14,7 @@ function App() {
   const [searchInput, setSearchInput] = useState("");
   const [soldierTaken, setSoldierTaken] = useState(0);
   const [soldierAdded, setSoldierAdded] = useState(0);
+  const [add, setAdd] = useState(false)
 
   useEffect(() => {
     const setData = async () => {
@@ -40,6 +41,10 @@ function App() {
     const cookieValue = getCookie(name);
     return cookieValue ? JSON.parse(cookieValue) : [];
   };
+  
+  const SetAdd = (bool) => {
+    setAdd(bool)
+  }
 
   const getCookie = () => {
     const cookies = document.cookie.split(";");
@@ -52,13 +57,14 @@ function App() {
   };
 
   return (
-    <div>
-      <Form
+    <div className="wrapper">
+      {add && <Form
         soldierAdded={soldierAdded}
         setSoldierTaken={setSoldierTaken}
         setSoldierAdded={setSoldierAdded}
-      />
-      <SearchByName setSearchInput={setSearchInput} searchInput={searchInput} />
+        setAdd={SetAdd}
+      />}
+      {!add && <SearchByName setSearchInput={setSearchInput} searchInput={searchInput} setAdd={SetAdd} />}
       <div>
         <Table
           allSoldiers={searchSoldiers}

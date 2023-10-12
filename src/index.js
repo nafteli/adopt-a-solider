@@ -5,8 +5,10 @@ import reportWebVitals from './reportWebVitals';
 import App from './App'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik" />
     <App/>
   </React.StrictMode>
 );

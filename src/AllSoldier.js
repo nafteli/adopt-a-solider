@@ -8,7 +8,9 @@ export const Table = ({
   setUserSoldiers,
 }) => {
   const statusObject = {
-    soldier: "חייל/ת",
+    soldier: "חייל",
+    soldierf: "חיילת",
+    backedHome: "חזר הבייתה",
     missing: "נעדר",
     forMedicine: 'רפו"ש',
   };
@@ -23,6 +25,42 @@ export const Table = ({
     setAllSoldiers(valueCopy);
     await updateData(id, allSoldiers[index])
   };
+
+  function CustomText({ text, color }) {
+    let textColorClass;
+
+    switch (color) {
+      case 'חייל': case 'חיילת':
+        textColorClass = '#20b487';
+        break;
+      case 'רפו"ש':
+        textColorClass = '#D2C16B';
+        break;
+      case 'נעדר':
+        textColorClass = '#DE7070';
+        break;
+      default:
+        textColorClass = '';
+      }
+
+    const textStyle = {
+      width: '3vw',
+      height: '1.5vw',
+      fontWeight: 700,
+      fontSize: '1.1vw',
+      textAlign: 'end',
+      color: textColorClass,
+      marginRight: '2%',
+      marginLeft: '0.5%',
+    };
+  
+    return (
+      <div style={textStyle} className="custom-text">
+        {text}
+      </div>
+    );
+  }
+
   return (
     <div>
       {/* <div>כל המאומצים</div> */}
@@ -56,7 +94,8 @@ export const Table = ({
           <div>כל השאר</div> */}
           {allSoldiers.map((sold, index) => (
             <div key={index} className="row" >
-              <div className="soldierStatus">{statusObject[sold.soldierStatus]}</div>
+              {/* <div className="soldierStatus">{statusObject[sold.soldierStatus]}</div> */}
+              <CustomText text={statusObject[sold.soldierStatus]} color={statusObject[sold.soldierStatus]} />
               <div className="separation"></div>
               <div className="soldierName">{sold.name}</div>
               <div className="adoptingTitle">מאמץ/ת:</div>
@@ -67,6 +106,7 @@ export const Table = ({
                     onInputChange("adopting", e.target.value, sold.id, true)
                   }
                   placeholder="הכנס שם"
+                  value={sold.adopting}
                 ></input>
               </div>
               <div className="UpdateTitle">:הערה</div>
@@ -77,6 +117,7 @@ export const Table = ({
                     onInputChange("Updates", e.target.value, sold.id)
                   }
                   placeholder="סטטוס/איחול/עדכון"
+                  value={sold.Updates}
                 ></input>
               </div>
             </div>
