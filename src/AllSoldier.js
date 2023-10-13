@@ -108,7 +108,7 @@ export const Table = ({
                   value={sold.adopting}
                 ></input>
               </div>
-              <div className="UpdateTitle">:הערה</div>
+              <div className="UpdateTitle">איחולים:</div>
               <div className="UpdateValue" value={sold.Updates}>
                 <input
                   dir="auto"

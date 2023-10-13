@@ -148,6 +148,7 @@
 .UpdateTitle {
   width: 4%;
   height: 1.2vw;
+  direction: rtl;
   font-weight: 700;
   font-size: 0.9vw;
   line-height: 130%;
@@ -162,8 +163,7 @@
     width: unset;
     margin-top: 4%;
     font-size: 2vw;
-    margin-right: 10%;
-    
+    margin-right: 10%;    
   }
 }
 
