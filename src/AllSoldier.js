@@ -115,7 +115,7 @@ export const Table = ({
                   onChange={(e) =>
                     onInputChange("Updates", e.target.value, sold.id)
                   }
-                  placeholder="סטטוס/איחול/עדכון"
+                  placeholder="סטטוס/איחול"
                   value={sold.Updates}
                 ></input>
               </div>
